@@ -43,12 +43,12 @@ cd projects
 ### Cloning a Repository
 Using HTTPS:
 ```sh
-git clone https://gitlab.com/username/repo_name.git
+git clone https://github.com/username/repo_name.git
 ```
 
 Using SSH:
 ```sh
-git clone git@gitlab.com:username/repo_name.git
+git clone git@github.com:username/repo_name.git
 ```
 
 ### Creating and Pushing to a New Repository
@@ -56,7 +56,7 @@ git clone git@gitlab.com:username/repo_name.git
 mkdir repo_name
 cd repo_name
 git init
-git remote add origin git@gitlab.com:username/repo_name.git
+git remote add origin git@github.com:username/repo_name.git
 git add .
 git commit -m "Initial commit"
 git push -u origin main
@@ -461,7 +461,7 @@ To change the URL of the remote repository your branch is tracking:
 
 1. **Clone the Repository**:
    ```sh
-   git clone https://gitlab.com/username/repo_name.git
+   git clone https://github.com/username/repo_name.git
    ```
 
 2. **Create a New Branch**:
