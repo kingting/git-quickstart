@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -22,7 +22,7 @@ jobs:
         run: |
           npm install -g yarn
 
-      - name: Generate _config.yml and Initialize Jekyll
+      - name: Generate Gemfile, _config.yml and Initialize Jekyll
         run: |
           chmod +x scripts/config-jekyll.sh
           scripts/config-jekyll.sh
@@ -33,6 +33,10 @@ jobs:
           BASEURL: "/${{ github.event.repository.name }}"
           GITHUB_REPOSITORY: "${{ github.repository }}"
           GITHUB_REPOSITORY_OWNER: "${{ github.repository_owner }}"
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ github.event.repository.name }}"
@@ -62,4 +66,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
