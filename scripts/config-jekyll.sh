@@ -17,14 +17,14 @@ end
 EOF
 
 # Install bundler if it's not installed
-#if ! gem spec bundler > /dev/null 2>&1; then
-#  echo "Installing bundler..."
-#  gem install bundler
-#fi
+if ! gem spec bundler > /dev/null 2>&1; then
+  echo "Installing bundler..."
+  gem install bundler
+fi
 
 # Install dependencies specified in Gemfile
-#echo "Installing dependencies..."
-#bundle install
+echo "Installing dependencies..."
+bundle install
 
 #----------------------------------------------------------------------------------
 # Extract title from README.md

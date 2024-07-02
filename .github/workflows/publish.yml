@@ -34,6 +34,11 @@ jobs:
           GITHUB_REPOSITORY: "${{ github.repository }}"
           GITHUB_REPOSITORY_OWNER: "${{ github.repository_owner }}"
 
+      - name: Debug Jekyll Config
+        run: |
+          echo "Listing files in the root directory:"
+          cat Gemfile _config.yml
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
